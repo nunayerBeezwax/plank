@@ -15,14 +15,6 @@ def tokify(input)
 end
 
 def store_template(tokens)
-  #cypher = ["MERGE (n:Token {type:\"#{tokens[0]}\"})"]
-
-  #(1..tokens.length).each do |i|
-    #cypher << "-[:Leads_To]->(:Token {type:\"#{tokens[i]}\"})"
-  #end
-
-  #DB.query cypher.join("")
-
   match = ""
   merge = "MERGE "
 
