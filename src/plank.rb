@@ -5,5 +5,6 @@ def communicate
 			break 
 		end
 		rephrase input
-	end
+    store_template tokify input
+  end
 end
