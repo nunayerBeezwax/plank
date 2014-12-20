@@ -4,7 +4,6 @@ def communicate
 		if input == "quit"
 			break 
 		end
-		rephrase input
     store_template tokify input
   end
 end

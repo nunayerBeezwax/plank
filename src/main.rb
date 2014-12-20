@@ -2,8 +2,10 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require
 
-require './plank'
-require './sentence_templating'
+require './utils'
+require './plank.rb'
+require './sentence_templating.rb'
+require './learn.rb'
 
 DB = Neo4j::Session.open :server_db, "http://127.0.0.1:7474"
 
@@ -21,8 +23,13 @@ def rephrase(input)
   	selection = results.sample
   	response << selection
   end
-  # results.sample is a syn...
   puts response.join(" ")
 end
 
-communicate()
+# communicate()
+
+# if you run this method with a txt file of some kind, plank will read it, and store 
+# to the db, sentence templates for every sentence in the file (or so is the goal).  
+# it seems to work pretty well for Huck Finn!
+
+learn_sentence_templates("../corpora/huck_finn.txt")
