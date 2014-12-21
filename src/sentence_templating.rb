@@ -4,10 +4,11 @@
 
 def tokify(input)
   tagger = EngTagger.new
-  tagged = tagger.get_readable(input).split(" ")
+  tagged = tagger.get_readable(input)
+  tag_array = tagged ? tagged.split(" ") : []
 
   tokens = []
-  tagged.each do |tok|
+  tag_array.each do |tok|
     tokens << tok.split("/")[1]
   end
 

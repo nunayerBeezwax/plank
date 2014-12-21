@@ -28,8 +28,12 @@ end
 
 # communicate()
 
-# if you run this method with a txt file of some kind, plank will read it, and store 
+# if you run this method with a batch of txt files, plank will read, and store 
 # to the db, sentence templates for every sentence in the file (or so is the goal).  
-# it seems to work pretty well for Huck Finn!
 
-learn_sentence_templates("../corpora/huck_finn.txt")
+def read_em
+  files = Dir.glob("../OANC-GrAF/data/spoken/face-to-face/charlotte/*.txt")
+  files.each { |f| learn_sentence_templates(f) }
+end
+
+read_em
