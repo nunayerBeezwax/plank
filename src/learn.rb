@@ -1,4 +1,4 @@
-# this file is going to be how plank learns to read.  let's put methods in here
+# this file is going to be how plank learns.  let's put methods in here
 # for turning text into useful database information.  
 # Stuff to do: clean text, tag text, lemmatise, n-gram...
 
@@ -13,6 +13,7 @@ def template(tokens)
   ")
 end
 
+# this doesn't have to be so verbose, putses just in there for testing purposes
 def learn_sentence_templates(filepath)
 	text = IO.read(filepath)
 	sentences = sententialize(text)
