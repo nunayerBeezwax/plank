@@ -32,5 +32,12 @@ def learn_sentence_templates(filepath)
 end
 
 def learn_words
-	text = IO.read("data/common_words.txt")
+	IO.foreach("../data/common_words.txt") do |line|
+		data = line.split(" ")
+		DB.query("
+			MERGE (w:Word {word: '#{data[2]}', frequency: #{data[1].to_i}})
+			")
+		puts "Just memorized the word #{data[2]} \n
+		      it happens #{data[1]} times"
+	end
 end
