@@ -36,4 +36,4 @@ def read_em
   files.each { |f| learn_sentence_templates(f) }
 end
 
-read_em
+communicate()
